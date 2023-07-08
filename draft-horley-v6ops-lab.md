@@ -1,7 +1,7 @@
 ---
 title: Expanding the IPv6 Lab Use Space
 abbrev: Expanding the IPv6 Lab Use Space
-docname: draft-horley-v6ops-lab
+docname: draft-horley-v6ops-lab-03
 v: 3
 submissiontype: IETF
 cat: std
