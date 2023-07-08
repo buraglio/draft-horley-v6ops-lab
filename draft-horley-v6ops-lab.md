@@ -1,7 +1,7 @@
 ---
 title: Expanding the IPv6 Lab Use Space
 abbrev: Expanding the IPv6 Lab Use Space
-docname: draft-horley-v6ops-lab-01
+docname: draft-horley-v6ops-lab
 cat: std
 ipr: trust200902
 area: Int
@@ -50,18 +50,11 @@ normative:
 
 informative:
   RFC6724:
-  RFC1918:
-  RFC3484:
-  RFC3513:    
-  RFC3515:
   RFC4048:
   RFC4193:
-  RFC7078:
-  RFC7526:
   RFC4193:
   RFC4291:
   RFC4548:
-  RFC5180:
   RFC6890:
  
   
