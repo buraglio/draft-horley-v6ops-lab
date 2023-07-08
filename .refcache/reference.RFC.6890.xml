@@ -1,0 +1,16 @@
+<reference anchor="RFC6890" target="https://www.rfc-editor.org/info/rfc6890">
+  <front>
+    <title>Special-Purpose IP Address Registries</title>
+    <author fullname="M. Cotton" initials="M." surname="Cotton"/>
+    <author fullname="L. Vegoda" initials="L." surname="Vegoda"/>
+    <author fullname="R. Bonica" initials="R." role="editor" surname="Bonica"/>
+    <author fullname="B. Haberman" initials="B." surname="Haberman"/>
+    <date month="April" year="2013"/>
+    <abstract>
+      <t>This memo reiterates the assignment of an IPv4 address block (192.0.0.0/24) to IANA. It also instructs IANA to restructure its IPv4 and IPv6 Special-Purpose Address Registries. Upon restructuring, the aforementioned registries will record all special-purpose address blocks, maintaining a common set of information regarding each address block.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="BCP" value="153"/>
+  <seriesInfo name="RFC" value="6890"/>
+  <seriesInfo name="DOI" value="10.17487/RFC6890"/>
+</reference>

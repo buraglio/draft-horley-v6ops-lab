@@ -1,0 +1,14 @@
+<reference anchor="RFC4291" target="https://www.rfc-editor.org/info/rfc4291">
+  <front>
+    <title>IP Version 6 Addressing Architecture</title>
+    <author fullname="R. Hinden" initials="R." surname="Hinden"/>
+    <author fullname="S. Deering" initials="S." surname="Deering"/>
+    <date month="February" year="2006"/>
+    <abstract>
+      <t>This specification defines the addressing architecture of the IP Version 6 (IPv6) protocol. The document includes the IPv6 addressing model, text representations of IPv6 addresses, definition of IPv6 unicast addresses, anycast addresses, and multicast addresses, and an IPv6 node's required addresses.</t>
+      <t>This document obsoletes RFC 3513, "IP Version 6 Addressing Architecture". [STANDARDS-TRACK]</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="4291"/>
+  <seriesInfo name="DOI" value="10.17487/RFC4291"/>
+</reference>

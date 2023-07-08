@@ -9,19 +9,10 @@
   <!ENTITY nbhy   "&#8209;">
   <!ENTITY wj     "&#8288;">
 
-<!ENTITY RFC2119 SYSTEM "https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
-<!ENTITY RFC8200 SYSTEM "https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8200.xml">
-<!ENTITY RFC8174 SYSTEM "https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml">
-<!ENTITY RFC6724 SYSTEM "https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6724.xml">
-<!ENTITY RFC4048 SYSTEM "https://bib.ietf.org/public/rfc/bibxml/reference.RFC.4048.xml">
-<!ENTITY RFC4193 SYSTEM "https://bib.ietf.org/public/rfc/bibxml/reference.RFC.4193.xml">
-<!ENTITY RFC4291 SYSTEM "https://bib.ietf.org/public/rfc/bibxml/reference.RFC.4291.xml">
-<!ENTITY RFC4548 SYSTEM "https://bib.ietf.org/public/rfc/bibxml/reference.RFC.4548.xml">
-<!ENTITY RFC6890 SYSTEM "https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6890.xml">
 ]>
 
 
-<rfc ipr="trust200902" docName="draft-horley-v6ops-lab" category="std" consensus="true">
+<rfc ipr="trust200902" docName="draft-horley-v6ops-lab" category="std" consensus="true" submissionType="IETF" tocInclude="true" sortRefs="true" symRefs="true">
   <front>
     <title abbrev="Expanding the IPv6 Lab Use Space">Expanding the IPv6 Lab Use Space</title>
 
@@ -77,7 +68,7 @@
     <abstract>
 
 
-<?line 62?>
+<?line 64?>
 
 <t>To reduce the likelihood of addressing conflicts and confusion between lab deployments and non-lab (i.e., production) deployments, an IPv6 unicast address prefix is reserved for use in lab, proof-of-concept, and validation networks as well as for any similar use case. This document describes the use of the IPv6 address prefix 0200::/7 as a prefix reserved for this purpose (repurposing the deprecated OSI NSAP-mapped prefix).</t>
 
@@ -92,7 +83,7 @@
   <middle>
 
 
-<?line 66?>
+<?line 68?>
 
 <section anchor="introduction"><name>Introduction</name>
 
@@ -158,21 +149,152 @@ Setting aside address space for lab and staging use, and adding this address spa
 
     <references title='Normative References'>
 
-&RFC2119;
-&RFC8200;
-&RFC8174;
+
+
+<reference anchor='RFC2119'>
+  <front>
+    <title>Key words for use in RFCs to Indicate Requirement Levels</title>
+    <author fullname='S. Bradner' initials='S.' surname='Bradner'/>
+    <date month='March' year='1997'/>
+    <abstract>
+      <t>In many standards track documents several words are used to signify the requirements in the specification. These words are often capitalized. This document defines these words as they should be interpreted in IETF documents. This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</t>
+    </abstract>
+  </front>
+  <seriesInfo name='BCP' value='14'/>
+  <seriesInfo name='RFC' value='2119'/>
+  <seriesInfo name='DOI' value='10.17487/RFC2119'/>
+</reference>
+
+<reference anchor='RFC8200'>
+  <front>
+    <title>Internet Protocol, Version 6 (IPv6) Specification</title>
+    <author fullname='S. Deering' initials='S.' surname='Deering'/>
+    <author fullname='R. Hinden' initials='R.' surname='Hinden'/>
+    <date month='July' year='2017'/>
+    <abstract>
+      <t>This document specifies version 6 of the Internet Protocol (IPv6). It obsoletes RFC 2460.</t>
+    </abstract>
+  </front>
+  <seriesInfo name='STD' value='86'/>
+  <seriesInfo name='RFC' value='8200'/>
+  <seriesInfo name='DOI' value='10.17487/RFC8200'/>
+</reference>
+
+<reference anchor='RFC8174'>
+  <front>
+    <title>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</title>
+    <author fullname='B. Leiba' initials='B.' surname='Leiba'/>
+    <date month='May' year='2017'/>
+    <abstract>
+      <t>RFC 2119 specifies common key words that may be used in protocol specifications. This document aims to reduce the ambiguity by clarifying that only UPPERCASE usage of the key words have the defined special meanings.</t>
+    </abstract>
+  </front>
+  <seriesInfo name='BCP' value='14'/>
+  <seriesInfo name='RFC' value='8174'/>
+  <seriesInfo name='DOI' value='10.17487/RFC8174'/>
+</reference>
+
+
 
 
     </references>
 
     <references title='Informative References'>
 
-&RFC6724;
-&RFC4048;
-&RFC4193;
-&RFC4291;
-&RFC4548;
-&RFC6890;
+
+
+<reference anchor='RFC6724'>
+  <front>
+    <title>Default Address Selection for Internet Protocol Version 6 (IPv6)</title>
+    <author fullname='D. Thaler' initials='D.' role='editor' surname='Thaler'/>
+    <author fullname='R. Draves' initials='R.' surname='Draves'/>
+    <author fullname='A. Matsumoto' initials='A.' surname='Matsumoto'/>
+    <author fullname='T. Chown' initials='T.' surname='Chown'/>
+    <date month='September' year='2012'/>
+    <abstract>
+      <t>This document describes two algorithms, one for source address selection and one for destination address selection. The algorithms specify default behavior for all Internet Protocol version 6 (IPv6) implementations. They do not override choices made by applications or upper-layer protocols, nor do they preclude the development of more advanced mechanisms for address selection. The two algorithms share a common context, including an optional mechanism for allowing administrators to provide policy that can override the default behavior. In dual-stack implementations, the destination address selection algorithm can consider both IPv4 and IPv6 addresses -- depending on the available source addresses, the algorithm might prefer IPv6 addresses over IPv4 addresses, or vice versa.</t>
+      <t>Default address selection as defined in this specification applies to all IPv6 nodes, including both hosts and routers. This document obsoletes RFC 3484. [STANDARDS-TRACK]</t>
+    </abstract>
+  </front>
+  <seriesInfo name='RFC' value='6724'/>
+  <seriesInfo name='DOI' value='10.17487/RFC6724'/>
+</reference>
+
+<reference anchor='RFC4048'>
+  <front>
+    <title>RFC 1888 Is Obsolete</title>
+    <author fullname='B. Carpenter' initials='B.' surname='Carpenter'/>
+    <date month='April' year='2005'/>
+    <abstract>
+      <t>This document recommends that RFC 1888, on Open Systems Interconnection (OSI) Network Service Access Points (NSAPs) and IPv6, be reclassified as Historic, as most of it has no further value, apart from one section, which is faulty. This memo provides information for the Internet community.</t>
+    </abstract>
+  </front>
+  <seriesInfo name='RFC' value='4048'/>
+  <seriesInfo name='DOI' value='10.17487/RFC4048'/>
+</reference>
+
+<reference anchor='RFC4193'>
+  <front>
+    <title>Unique Local IPv6 Unicast Addresses</title>
+    <author fullname='R. Hinden' initials='R.' surname='Hinden'/>
+    <author fullname='B. Haberman' initials='B.' surname='Haberman'/>
+    <date month='October' year='2005'/>
+    <abstract>
+      <t>This document defines an IPv6 unicast address format that is globally unique and is intended for local communications, usually inside of a site. These addresses are not expected to be routable on the global Internet. [STANDARDS-TRACK]</t>
+    </abstract>
+  </front>
+  <seriesInfo name='RFC' value='4193'/>
+  <seriesInfo name='DOI' value='10.17487/RFC4193'/>
+</reference>
+
+<reference anchor='RFC4291'>
+  <front>
+    <title>IP Version 6 Addressing Architecture</title>
+    <author fullname='R. Hinden' initials='R.' surname='Hinden'/>
+    <author fullname='S. Deering' initials='S.' surname='Deering'/>
+    <date month='February' year='2006'/>
+    <abstract>
+      <t>This specification defines the addressing architecture of the IP Version 6 (IPv6) protocol. The document includes the IPv6 addressing model, text representations of IPv6 addresses, definition of IPv6 unicast addresses, anycast addresses, and multicast addresses, and an IPv6 node's required addresses.</t>
+      <t>This document obsoletes RFC 3513, "IP Version 6 Addressing Architecture". [STANDARDS-TRACK]</t>
+    </abstract>
+  </front>
+  <seriesInfo name='RFC' value='4291'/>
+  <seriesInfo name='DOI' value='10.17487/RFC4291'/>
+</reference>
+
+<reference anchor='RFC4548'>
+  <front>
+    <title>Internet Code Point (ICP) Assignments for NSAP Addresses</title>
+    <author fullname='E. Gray' initials='E.' surname='Gray'/>
+    <author fullname='J. Rutemiller' initials='J.' surname='Rutemiller'/>
+    <author fullname='G. Swallow' initials='G.' surname='Swallow'/>
+    <date month='May' year='2006'/>
+    <abstract>
+      <t>This document is intended to accomplish two highly inter-related tasks: to establish an "initial" Internet Code Point (ICP) assignment for each of IPv4 and IPv6 address encoding in Network Service Access Point (NSAP) Addresses, and to recommend an IANA assignment policy for currently unassigned ICP values. In the first task, this document is a partial replacement for RFC 1888 -- particularly for section 6 of RFC 1888. In the second task, this document incorporates wording and specifications from ITU-T Recommendation X.213 and further recommends that IANA use the "IETF consensus" assignment policy in making future ICP assignments. [STANDARDS-TRACK]</t>
+    </abstract>
+  </front>
+  <seriesInfo name='RFC' value='4548'/>
+  <seriesInfo name='DOI' value='10.17487/RFC4548'/>
+</reference>
+
+<reference anchor='RFC6890'>
+  <front>
+    <title>Special-Purpose IP Address Registries</title>
+    <author fullname='M. Cotton' initials='M.' surname='Cotton'/>
+    <author fullname='L. Vegoda' initials='L.' surname='Vegoda'/>
+    <author fullname='R. Bonica' initials='R.' role='editor' surname='Bonica'/>
+    <author fullname='B. Haberman' initials='B.' surname='Haberman'/>
+    <date month='April' year='2013'/>
+    <abstract>
+      <t>This memo reiterates the assignment of an IPv4 address block (192.0.0.0/24) to IANA. It also instructs IANA to restructure its IPv4 and IPv6 Special-Purpose Address Registries. Upon restructuring, the aforementioned registries will record all special-purpose address blocks, maintaining a common set of information regarding each address block.</t>
+    </abstract>
+  </front>
+  <seriesInfo name='BCP' value='153'/>
+  <seriesInfo name='RFC' value='6890'/>
+  <seriesInfo name='DOI' value='10.17487/RFC6890'/>
+</reference>
+
+
 
 
     </references>
@@ -182,73 +304,73 @@ Setting aside address space for lab and staging use, and adding this address spa
   </back>
 
 <!-- ##markdown-source:
-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
-ai77L8oCvEJQHAAA
+H4sIAPXmqGQAA5VZ25LbNhJ951dgnYfYW5J2xnF8mUollsdje7KeS0bjTaW2
+9gEkQQk1JKEAoDRKyv+y37JftqcbAEVp5Gw2laohKaC70ZfTp+HxeJx57Wt1
+Is7ul7ItdTsXfqHE+fXqufgoc/HJKTFbykJlMs+tWv2JhaUpWtlAZGll5ccL
+Y2u1Ga+em6Ub1zLPIOObzHV5o53TpvWbJdaen92+ywrpT4TzZaaX9kR42zn/
+9Ojo1dHTTFolsaj12Xp+Iv7x/Op6lt2t+YuyrfLjt6QryzLZeSg8yQT/N45/
+hdCtOxGXE/Gms3Jea9P/EEy91MXdw9+MhbKzVtn5RswKrdpCOXGp/NrYu36R
+aqSuT0QeN7+ujF1LSw5a1rJVE1h32JrTiTjtmgYL3Z41pwur3cMf/x9zChJR
+RAmvlfuyGX9XK92Ki42ye5rOr8XUFgt9q4qF25d/R7smDe16rZeS1nlaNylM
+s6+H1dx0zomfaVU2VPJj1+qlsukYvZ6oBingXlu9nnTusPVnE/GBE2zPhWfl
+/ndW90Hdy7zTdbl/HlW+XqTfJn0K7Cm7RcRMVSnV7mm7Nc2DX/5YnzfNn1A4
+o9PN53vaZoXxfveHP1bmaMOuuqw1tpFerxTVys2706fHx6/i40sU3Ql2Z5lu
+q71lz188fRYfnx09e5kej199c+Dx6avj9Phtv/b5y1dHeMxI/ng8FjJ33soC
+xXtrhFVlVyhGllrfqVovjCmFqYQsS6uAF4CdwrRVrQvvBHCI3zrCEZEjhRAA
+AYwRpVrWZtOoNq5qTUvYIx7riZqMxNIa6PHY9WS4dIS1AdGQlYV0PqnFBlXp
+e4GqxKuyK1UKeEZ0AD3NGlmmqcb4HxYVaulHrHgla11K0iTamOJCOrFWdU1/
+SYhsN8LpRtcyCIRiNRG3CygDlHZkGYx0hdU56p1cQ6vgkx5/96w8ovid/O0F
+KZDp447dnoQvO7s0kPTYqvCYMB0esQpYjMVXs3NxOZtejxu5XOI9CHsyCaFr
+dFnWKsu+IhzuXYpAQkiyKUGD76xi3Wzx77/H/Pj8GYfEsVrjhbpfIq5oRxuY
+UOlWsWuCSiyRdW2CVeq+qBHzlcJKEkmRhU9GkGIpRq4rFr0BjprSYDPixdop
+D6GddsQvlPefP08IpWr1II0K09VwgPF40xC34TAc8D8FabNE/tAaiZydt1Cb
+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
 
 -->
 

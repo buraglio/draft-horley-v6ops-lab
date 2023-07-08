@@ -1,0 +1,14 @@
+<reference anchor="RFC8200" target="https://www.rfc-editor.org/info/rfc8200">
+  <front>
+    <title>Internet Protocol, Version 6 (IPv6) Specification</title>
+    <author fullname="S. Deering" initials="S." surname="Deering"/>
+    <author fullname="R. Hinden" initials="R." surname="Hinden"/>
+    <date month="July" year="2017"/>
+    <abstract>
+      <t>This document specifies version 6 of the Internet Protocol (IPv6). It obsoletes RFC 2460.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="STD" value="86"/>
+  <seriesInfo name="RFC" value="8200"/>
+  <seriesInfo name="DOI" value="10.17487/RFC8200"/>
+</reference>
