@@ -13,8 +13,21 @@ author:
       -
         ins: N. Buraglio
         name: Nick Buraglio
-        org: ForwardingPlane, LLC
+        org: Energy Sciences Network
         email: buraglio@forwardingplane.net
+      -
+        ins: C. Cummings
+        name: Chris Cummings
+        org: Energy Sciences Network
+        email: chriscummings@es.net
+      -
+        ins: Kevin Myers
+        org: IP ArchiTechs
+        email: kevin.myers@iparchitechs.com
+      -
+       ins: Russ White
+       org: Juniper Networks
+       email: russ@riw.us
       -
         ins: E. Horley
         name: Ed Horley
@@ -25,9 +38,23 @@ author:
         name: Tom Coffeen
         org: Hexabuild
         email: tom@hexabuild.io
+      -
+        ins: S. Hogg
+        name: Scott Hogg
+        org: Hexabuild
+        email: scott@hexabuild.io
 
 normative:
   RFC2119:
+  RFC8200:   
+
+informative:
+  RFC6724:
+  RFC1918:
+  RFC3484:
+  RFC3513:    
+  RFC3515:
+  RFC4048:
   RFC4193:
   RFC7078:
   RFC7526:
@@ -35,17 +62,7 @@ normative:
   RFC4291:
   RFC4548:
   RFC5180:
-  RFC6724:
   RFC6890:
-  RFC8200:  
-  RFC3513:    
-  RFC3515:
-  RFC4048:
-
-informative:
-  RFC6724:
-  RFC1918:
-  RFC3484:
  
   
 
@@ -71,7 +88,7 @@ The precedence for the lab prefix should no be lower than the GUA prefix as defi
 
 # Assignment of address space for use in large-scale lab and prototyping environments 
 
-The prefix reserved for large scale lab and testing purposes is 0200::/7. 
+The prefix reserved for large scale lab and testing purposes is 0200::/7.
 
 ## Operational Implications
 
