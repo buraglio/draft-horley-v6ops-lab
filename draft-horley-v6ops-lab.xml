@@ -59,7 +59,7 @@
       </address>
     </author>
 
-    <date year="2023" month="July" day="07"/>
+    <date year="2023" month="July" day="10"/>
 
     <area>Int</area>
     <workgroup>V6OPS</workgroup>
@@ -87,13 +87,16 @@
 
 <section anchor="introduction"><name>Introduction</name>
 
-<t>The address architecture for IPv6 <xref target="RFC4291"/> does not explicitly define any prefixes allocated exclusively for lab use, nor is such address space allocated in <xref target="RFC6890"/> or in <xref target="RFC8200"/>. While lab deployments could potentially use IPv6 address prefixes typically assigned and configured in non-lab network, the use of such addressing in lab environments may create addressing conflicts and operational confusion. For instance, designing labs utilizing ULA fc00::/7 <xref target="RFC4193"/> is problematic due to the random global ID requirement preventing hierarchical network prefix design possibilities. Further, default address selection behavior <xref target="RFC6724"/> by end nodes may result in a de-preferencing of such addresses and prevent lab deployments from accurately modeling their desired non-lab equivalents.
+<t>The address architecture for IPv6 <xref target="RFC4291"/> does not explicitly define any prefixes allocated exclusively for lab use, nor is such address space allocated in <xref target="RFC6890"/> or in <xref target="RFC8200"/>. While lab deployments could potentially use IPv6 address prefixes typically assigned and configured in non-lab network, the use of such addressing in lab environments may create addressing conflicts and unnecessary operational confusion. For instance, designing labs utilizing ULA fc00::/7 <xref target="RFC4193"/> is problematic due to the random global ID requirement preventing hierarchical network prefix design possibilities. Further, default address selection behavior <xref target="RFC6724"/> by end nodes may result in a de-preference of such addresses and prevent lab deployments from accurately modeling their desired non-lab equivalents, especially in the testing of devices that are incapable of adjusting the global source selection table.
 To resolve these problems involved in building large-scale lab networks, and pre-staging, or automating large-scale networks for deployment, this document allocates the IPv6 address prefix 0200::/7 for these purposes.
-The goal is to allow organization to share working lab configuration files (with little or no need of modification) to be deployed in a third party lab environment like, public and private clouds, virtualization or hosting environments,
-and in other networks like Service Providers, Enterprise, Government, IoT, and Energy,
-all with the knowledge that the lab GUA address space will perform the same as any GUA but with the added knowledge that filtering will be used to protect accidental leaks to the Internet.
-The following criteria is for selecting the lab prefix:
-The precedence for the lab prefix should no be lower than the GUA prefix as defined in <xref target="RFC6724"/> (unlike ULA). Reduce the operational impacts to IANA and the RIR's in selecting lab prefix space.</t>
+The goal is to allow organization to share working lab configuration files (with little or no need of modification) to be deployed in a third party lab environment, public and private clouds, virtualization or hosting environments as well as in other networks such as Service Providers, Enterprise, Government, IoT, and Energy, all with the knowledge that the lab GUA address space will perform the same as any GUA but with the added knowledge that filtering will be used to protect accidental leaks to the Internet. 
+The following criteria is for selecting the lab prefix:</t>
+
+<t><list style="symbols">
+  <t>Address space should reside outside of IANA allocated GUA block of 2000::/3</t>
+  <t>The precedence for the lab prefix should not be lower than the GUA prefix as defined in <xref target="RFC6724"/> (unlike ULA).</t>
+  <t>Reduce the operational impacts to IANA and the RIR's in selecting lab prefix space.</t>
+</list></t>
 
 </section>
 <section anchor="terminology"><name>Terminology</name>
@@ -115,10 +118,17 @@ appear in all capitals, as shown here.</t>
 
 <t>This space <bcp14>SHOULD NOT</bcp14> be employed for addressing use cases which are already defined in other RFCs, such as addresses set apart for documentation, testing, etc.
 Enterprise and large-scale networks have some specific criteria around building and validating prior to deployment. The issues with ULA for infrastructure modeling, lab creation, configuration and behavior testing at the host level are notably impactful in large enterprises as well as continental and global scale networks. This is primarily, but not exclusively, due to the increased focus on large-scale hosts, servers, and application testing. Additionally, it is likely that both GUA and ULA may co-exist or are planned to co-exist, and reconfiguring lab hosts, network elements, operational technology systems, and IoT hardware isn't practical or desirable due to inconsistent results for host preference due to <xref target="RFC6724"/> behavior.
-Most large-scale enterprises strive to build lab, dev, and QA environments that reflect production as accurately as possible. This is a fairly straightforward way to avoid disparity between production and non-production. Enterprise environments are an area that need increased IPv6 adoption. In an effort to enable a more approachable mechanism to model a global scale network,  and to avoid the pitfalls of ULA de-preferenced host behavior or mis-use (i.e. address space squatting) on other IPv6 space, a specific IPv6 lab prefix is being assigned.
-Because this address prefix has previously been used for the OSI NSAP-mapped prefix set in <xref target="RFC4048"/> and <xref target="RFC4548"/>, and deprecated, this address prefix is already limited in its usability. In addition, the address prefix was returned to IANA and is available to be marked for lab or other purposes.
+Most large-scale enterprises strive to build lab, dev, and QA environments that reflect production as accurately as possible. This is a fairly straightforward way to avoid disparity between production and non-production. Enterprise environments are an area that need increased IPv6 adoption. In an effort to enable a more approachable mechanism to model a global scale network,  and to avoid the pitfalls of ULA de-preferenced host behavior or mis-use (i.e. address space squatting) on other IPv6 space, a specific IPv6 lab prefix is being assigned.</t>
+
+<section anchor="resource-utilization"><name>Resource utilization</name>
+
+<t>The prefix in question, (0200::/7) has previously been used for the OSI NSAP-mapped prefix set in <xref target="RFC4048"/> and <xref target="RFC4548"/>, and deprecated, this address prefix is already limited in its usability and has not been officially re-purposed. The address prefix was returned to IANA and is available to be marked for other purposes.
 This assignment implies that IPv6 network operators <bcp14>SHOULD</bcp14> add this address prefix to the list of non-routable IPv6 address space, and if packet filters are deployed, then this address prefix <bcp14>SHOULD</bcp14> be added to packet filters. This is not a local-use address prefix so these filters may be used in both local and public contexts.</t>
 
+<t>As noted <eref target="https://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xhtml">here</eref> by the IANA Internet Protocol Version 6 Address Space allocation reference, 0200::/7 was deprecated as of December 2004 by <xref target="RFC4048"/>. This space is outside of the 2000::/3 address block, making it significantly easier to filter and providing straightforward visual and programmatic identification. Because the resource has been previously allocated, no new resources are required. Additionally, as noted by the IANA allocation list, approximately 85% of the IPv6 address space is reserved for future
+definition and use, and is not assigned by IANA at this time, leaving ample room for growth over the coming decades.</t>
+
+</section>
 </section>
 </section>
 <section anchor="acknowledgements"><name>Acknowledgements</name>
@@ -304,73 +314,82 @@ Setting aside address space for lab and staging use, and adding this address spa
   </back>
 
 <!-- ##markdown-source:
-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
-nikehkZMXFlUGlyYdhUGYOCxgRAujQkDnnPw8otnhJkCjhIAnhL0l7GruJ27
-M+W210cpR0lJnPSZRW0DHOLCtJ1iSQ85RsxJNlM+0AXSc4BbHhAbW3EZ/9Iz
-yKuwjVto04Q5nbOBB8RwS1Jy1w7n6UeNqI4uTAIkUc6HzBlAf0/GHgPC667/
-Q1O6Tooj5hOqQ0zVTAKjH/PN8HqJKwzTqZzzdVp/MbeFs8ihMO+YoQXD7gLe
-Ee4SiaIMfTg4UW8ID5GgMTTe9EYBRTj06bK2H5HpypSAaT/6/DFemhR8sxf5
-iQ25FWh8vJMY3ABHB33h2nr3Qpj+DMfjWYLd9uE9j1Vz4JMF3l4avj4L1yjh
-RofQJOXlMDn4WFN0hraE2OkkXvDnqLnsv30bPFBtHAAA
+H4sIAItmrGQAA5VZbXPbNhL+zl+BS+emSUdi4iR1E0+njZI4je8S27Wcdjqd
+foBISMKZJBQAlKx28l/ut9wvu2cXAEnJSq+XyYz5AmIX+/Lss6vxeJx57St1
+Ik5vV7IpdbMQfqnE2eX6WLyTM/HBKTFdyUJlcjazav0XFpamaGSNLUsr5368
+NLZS2/H62KzcuJKz8aMnGbZ5krl2VmvntGn8doXlZ6fXb7JC+hPhfJnplT0R
+3rbOP3706Pmjx5m0SmJR47PN4kT8dHxxOc1uNvxE2Ub58WsSl2WZbD1knmSC
+/43jXyF0407EeS5etlYuKm26F0Hbc13c3H1nLISdNsoutmJaaNUUyolz5TfG
+3nSLVC11dSJm8eMXc2M30pKNVpVsVA7tDmvzKhev2rrGQrenzaul1e7uy/9H
+nYK2KOIOL5T7vBr/VGvdiPdbZfcknV2KiS2W+loVS7e//w19ldf01Qu9krTO
+07q8MPW+HBZz1TonfqZV2VDIP9pGr5RNx+jkRDEIAffC6k3eusPan+biLcfY
+nglPy/3nLO6tupWzVlfl/nlU+WKZ3uVdCOwJu4bHzHyuVLMn7drUd978uTxv
+6r8gcEqnWyz2pE0L4/3uiz8X5uiDXXFZY2wtvV4rypWrN68eHx09j5fPkHQn
++DrLdDPfW3b8zeOn8fLpo6fP0uXR8ycHLh8/P0qXX3drj589f4TLjPYfj8dC
+zpy3skDyXhthVdkWisGl0jeq0ktjSmHmQpalVcALIE9hmnmlC+8EoIjvWsIR
+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
 
 -->
 
