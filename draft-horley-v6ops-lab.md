@@ -23,28 +23,21 @@ author:
         org: Energy Sciences Network
         email: chriscummings@es.net
       -
-        ins: Kevin Myers
+        ins: K. Myers
+        name: Kevin Myers
         org: IP ArchiTechs
         email: kevin.myers@iparchitechs.com
       -
-       ins: Russ White
-       org: Juniper Networks
+       ins: R. White
+       name: Russ White
+       org: Akamai Technologies
        email: russ@riw.us
       -
         ins: E. Horley
         name: Ed Horley
         org: Hexabuild
         email: ed@hexabuild.io
-      -
-        ins: T. Coffeen
-        name: Tom Coffeen
-        org: Hexabuild
-        email: tom@hexabuild.io
-      -
-        ins: S. Hogg
-        name: Scott Hogg
-        org: Hexabuild
-        email: scott@hexabuild.io
+      
 
 normative:
   RFC2119:
@@ -71,7 +64,7 @@ To reduce the likelihood of addressing conflicts and confusion between lab deplo
 
 The address architecture for IPv6 {{RFC4291}} does not explicitly define any prefixes allocated exclusively for lab use, nor is such address space allocated in {{RFC6890}} or in {{RFC8200}}. While lab deployments could potentially use IPv6 address prefixes typically assigned and configured in non-lab network, the use of such addressing in lab environments may create addressing conflicts and unnecessary operational confusion. For instance, designing labs utilizing ULA fc00::/7 {{RFC4193}} is problematic due to the random global ID requirement preventing hierarchical network prefix design possibilities. Further, default address selection behavior {{RFC6724}} by end nodes may result in a de-preference of such addresses and prevent lab deployments from accurately modeling their desired non-lab equivalents, especially in the testing of devices that are incapable of adjusting the global source selection table.
 To resolve these problems involved in building large-scale lab networks, and pre-staging, or automating large-scale networks for deployment, this document allocates the IPv6 address prefix 0200::/7 for these purposes.
-The goal is to allow organization to share working lab configuration files (with little or no need of modification) to be deployed in a third party lab environment, public and private clouds, virtualization or hosting environments as well as in other networks such as Service Providers, Enterprise, Government, IoT, and Energy, all with the knowledge that the lab GUA address space will perform the same as any GUA but with the added knowledge that filtering will be used to protect accidental leaks to the Internet. 
+The goal is to allow organization to share working lab configuration files (with little or no need of modification) to be deployed in a third party lab environment, public and private externally managed services, virtualization or hosting environments as well as in other networks such as Service Providers, Enterprise, Government, IoT, and Energy, all with the knowledge that the lab GUA address space will perform the same as any GUA but with the added knowledge that filtering will be used to protect accidental leaks to the Internet. 
 The following criteria is for selecting the lab prefix:
 
 * Address space should reside outside of IANA allocated GUA block of 2000::/3
@@ -105,7 +98,7 @@ definition and use, and is not assigned by IANA at this time, leaving ample room
 
 # Acknowledgements 
 
-The authors would like to acknowledge the valuable input and contributions of the v6ops WG. The authors further acknowledge the work of Bob Hinden and Stephen Deering, in authoring the protocol standard and the addressing architecture for IPv6.
+The authors would like to acknowledge the valuable input and contributions of the v6ops WG. The authors further acknowledge the work of Bob Hinden and Stephen Deering, in authoring the protocol standard and the addressing architecture for IPv6. The authors would also like to recognize the valuable input, suggestions, and insight by Tom Coffeen, Scott Hogg, and Jay Stewart. 
 
 # Security Considerations
 
